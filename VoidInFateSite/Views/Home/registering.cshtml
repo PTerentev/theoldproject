@@ -1,0 +1,15 @@
+﻿@model IEnumerable<string>
+    @try
+    {
+        <div>
+            @foreach (var item in Model)
+            {
+                <p>@item</p>
+            }
+
+        </div>
+    }
+    catch
+    {
+        //void
+    }

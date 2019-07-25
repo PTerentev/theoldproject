@@ -1,0 +1,11 @@
+C:\Users\MY PC\Desktop\VoidInFateSite\Domain\bin\Release\Domain.dll.config
+C:\Users\MY PC\Desktop\VoidInFateSite\Domain\bin\Release\Domain.dll
+C:\Users\MY PC\Desktop\VoidInFateSite\Domain\bin\Release\Domain.pdb
+C:\Users\MY PC\Desktop\VoidInFateSite\Domain\bin\Release\EntityFramework.dll
+C:\Users\MY PC\Desktop\VoidInFateSite\Domain\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\MY PC\Desktop\VoidInFateSite\Domain\bin\Release\EntityFramework.xml
+C:\Users\MY PC\Desktop\VoidInFateSite\Domain\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\MY PC\Desktop\VoidInFateSite\Domain\obj\Release\Domain.csproj.CoreCompileInputs.cache
+C:\Users\MY PC\Desktop\VoidInFateSite\Domain\obj\Release\Domain.csproj.CopyComplete
+C:\Users\MY PC\Desktop\VoidInFateSite\Domain\obj\Release\Domain.dll
+C:\Users\MY PC\Desktop\VoidInFateSite\Domain\obj\Release\Domain.pdb

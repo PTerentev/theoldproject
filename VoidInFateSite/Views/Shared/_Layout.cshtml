@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../Content/specialstyle.css">
+    <title>@ViewBag.Title</title>
+    <link rel="SHORTCUT ICON" href="../../fonts/logo/icon.png" type="image/png">
+    <link href="../../Content/bootstrap.css" rel="stylesheet" />
+    <link href="../../Content/specialstyle.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    
+</head>
+
+<body >
+    <div class="navbar navbar-inverse navbar-fixed-top" style="" id="head">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/Index">Void in fate</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/code">Ввести код</a></li>
+                    <li><a href="/About">Об игре</a></li>
+                    <li><a href="/News">Новости</a></li>
+
+                    <li><a href="/Download">Скачать</a></li>
+                    @if (ViewBag.Login != null)
+                    {
+                        <li ><a href="/Profile" >@ViewBag.Login</a></li>
+                                                    
+                        <li><a href="/Unlogin">Выйти</a></li>
+                    }
+                    else
+                    {
+                        <li><a href="/Profile">Аккаунт</a></li>
+                    }
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    @RenderBody()
+    <footer class="page-footer font-small unique-color-dark pt-0">
+
+
+        <!--Footer Links-->
+        <div class="container-fluid mt-5 mb-4 text-center text-md-left">
+            <div class="row mt-3">
+
+                <!--First column-->
+                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 ">
+                    <h6 class="text-uppercase font-weight-bold">
+                        <strong>ConservantGames</strong>
+                    </h6>
+                    <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                    <p>Игра для проекта по введению в инженерную деятельность</p>
+                </div>
+                <!--/.First column-->
+                <!--Second column-->
+                <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 ">
+                    <h6 class="text-uppercase font-weight-bold">
+                        <strong>For development</strong>
+                    </h6>
+                    <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                    <p>
+                        <a href="https://getbootstrap.com/">Bootstrap</a>
+                    </p>
+                    <p>
+                        <a href="https://www.rpgmakerweb.com">RPG Maker MV</a>
+                    </p>
+                    <p>
+                        <a href="https://www.asp.net/mvc">Asp.net MVC</a>
+                    </p>
+
+                </div>
+                <!--/.Second column-->
+                <!--Third column-->
+                <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 ">
+                    <h6 class="text-uppercase font-weight-bold">
+                        <strong>Полезные ссылки</strong>
+                    </h6>
+                    <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                    <p>
+                        <a href="#!">Твой аккаунт</a>
+                    </p>
+                    <p>
+                        <a href="#!">Скачать</a>
+                    </p>
+                    <p>
+                        <a href="#!">О команде</a>
+                    </p>
+                    <p>
+                        <a href="#!">Поддержка</a>
+                    </p>
+                </div>
+                <!--/.Third column-->
+                <!--Fourth column-->
+                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 ">
+                    <h6 class="text-uppercase font-weight-bold">
+                        <strong>Контакты</strong>
+                    </h6>
+                    <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                    <p>
+                        <i class="fa fa-home mr-3"></i> Красноярск, автобус номер 2
+                    </p>
+                    <p>
+                        <i class="fa fa-envelope mr-3"></i> ConservantGames@yandex.ru
+                    </p>
+
+                </div>
+                <!--/.Fourth column-->
+
+            </div>
+        </div>
+        <!--/.Footer Links-->
+        <!-- Copyright-->
+        <div class="footer-copyright py-3 text-center" id="footerspecial" style="background-color: black;width: 100%">
+            © 2018 Copyright:
+
+            <strong> ConservantGames</strong>
+
+        </div>
+        <!--/.Copyright -->
+
+    </footer>
+    <!--/.Footer-->
+
+<script src="../../Scripts/bootstrap.min.js"></script>
+<script src="../../Scripts/jquery-1.10.2.min.js"></script>
+<script src="../../Scripts/jquery.unobtrusive-ajax.min.js"></script>
+<script src="../../Scripts/VoidScript.js"></script>
+</body>
+</html>

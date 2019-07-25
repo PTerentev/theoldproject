@@ -1,0 +1,26 @@
+﻿@model IEnumerable<Domain.Entities.Recent>
+@try
+{
+    
+        foreach (var item in Model)
+        {
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 newsrow">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 imagerow">
+                        @Html.Raw("<img style='width: 100%; top: 0; left: 0; right: 0; height: 100%; position: absolute;' src=\"data:image/jpeg;base64,"
+                                  + Convert.ToBase64String(item.LinkSmallImg) + "\" />")
+                    </div>
+                    <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 textrow">
+                        <a href="/News/@item.Id"> <h1>@item.Caption</h1></a> 
+                        <br>
+                        <p>@item.Text</p>
+                    </div>
+                </div>
+            </div>
+        }
+    
+}
+catch
+{
+    <p>Увы, но новостей больше нет</p>
+}

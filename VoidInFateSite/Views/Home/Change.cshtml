@@ -1,0 +1,123 @@
+﻿@model Domain.Entities.Account
+@{
+    ViewBag.Title = "Изменение аккаунта";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div id="main" style="background-color: black">
+    <div class="container-fluid">
+        <div class="row head">
+            <div class="col-xs-12 col-sm-2 col-md-2 col-lg-3 ">
+            </div>
+            <div class="col-xs-12 col-sm-8 col-md-8 col-lg-6 gameSize">
+
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 gameName">
+                        <img src="../../fonts/logo/LOGO.png" alt="" style="height: 100%;">
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 gameButton text-center">
+                        <a href="#" class="btn startbutton ">НАЧАТЬ ИГРАТЬ!</a>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-2 col-md-2 col-lg-3 ">
+            </div>
+
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row ">
+            <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 ">
+            </div>
+            <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 mainsize" style="background-color: #101010" id="mainblock">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="height: 50px;">
+                        <img src="../../fonts/main-news-top.png" alt="" style="width: 100%; top: 0; left: 0;right: 0; height:100%; position: absolute;background-color: #090809;">
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="height: 100px; color: white; font-weight: bolder;">
+                        <h4>ГЛАВНАЯ / АККАУНТ / ИЗМЕНЕНИЕ </h4>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+                        @if (!String.IsNullOrEmpty(ViewBag.Id))
+                        {
+                            string Name;
+                            if (ViewBag.Id == "Password")
+                            {
+                                Name = " новый пароль";
+                                using (Ajax.BeginForm("Changing", new AjaxOptions { UpdateTargetId = "results" }))
+                                {
+                                    <div class="form-group">
+                                        <label>ID: @Model.Id</label>
+                                        <input name="Id" type="hidden" value="@Model.Id">
+                                        <input name="Name" type="hidden" value="Password">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="ChangeItem">Введите @Name</label>
+                                        <input name="ChangeItem" id="ChangeItem" type="password" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="ChangeItemConfirm">Повторите</label>
+                                        <input name="ChangeItemConfirm" type="password" id="ChangeItemConfirm" class="form-control">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-md-offset-2 col-md-10">
+                                            <input type="submit" value="Изменить" class="btn btn-default" />
+                                        </div>
+                                    </div>
+
+
+                                }
+                            }
+                            else
+                            {
+                                Name = " новую почту";
+                                using (Ajax.BeginForm("Changing", new AjaxOptions { UpdateTargetId = "results" }))
+                                {
+                                    <div class="form-group">
+                                        <label>ID: @Model.Id</label>
+                                        <input name="Id" type="hidden" value="@Model.Id">
+                                        <input name="Name" type="hidden" value="Email">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="ChangeItem">Введите @Name</label>
+                                        <input name="ChangeItem" id="ChangeItem" class="form-control" type="email">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="ChangeItemConfirm">Повторите</label>
+                                        <input name="ChangeItemConfirm" type="email" id="ChangeItemConfirm" class="form-control">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-md-offset-2 col-md-10">
+                                            <input type="submit" value="Изменить" class="btn btn-default" />
+                                        </div>
+                                    </div>
+
+
+                                }
+                            }
+
+                        }
+                        <div id="results"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+
+        </div>
+
+
+    </div>
+</div>
+
+
+
+
+
+@Scripts.Render("~/scripts/jquery-1.10.2.min.js")
+@Scripts.Render("~/scripts/jquery.unobtrusive-ajax.min.js")
+

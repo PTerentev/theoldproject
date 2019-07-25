@@ -1,0 +1,129 @@
+﻿
+@{
+    ViewBag.Title = "Admin";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="main" style="background-color: #090809">
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 ">
+            </div>
+            <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 mainsize" style="background-color: #101010" id="mainblock">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="height: 50px;">
+                        <img src="../../fonts/main-news-top.png" alt="" style="width: 100%; top: 0; left: 0;right: 0; height:100%; position: absolute;background-color: #090809;">
+                    </div>
+
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 " style="padding: 10px; min-height: 200px;">
+                       
+
+                        <fieldset>
+                            <legend>Добавить новость</legend>
+                            <div>
+                                <label for="Caption" >Caption</label><br />
+                                <input id="Caption" name="Caption" type="text"/>
+                            </div>
+                            <div>
+                                <label for="Text">Text</label><br/>
+                                <textarea id="Text" rows="6" name="Text" cols="100"></textarea>
+                            </div>
+                            <div>
+                                <label for="FullText">Полный текст</label><br />
+                                <textarea id="FullText" rows="6" name="FullText" cols="100"></textarea>
+                            </div>
+                            <div >
+                                <label for="LinkToSmallImage">Маленькая картинка</label>
+                                <input id="LinkToSmallImage" type="file" name="LinkToSmallImage"/>
+                            </div>
+                            <div >
+                                <label for="LinkToLargeImage">Большая картинка</label>
+                                <input id="LinkToLargeImage" type="file" name="LinkToLargeImage"/>
+                            </div>
+                            <div>
+                                <label for="Author">Автор</label><br />
+                                <input id="Author" name="Author" type="text" />
+                            </div>
+                            <br/>
+                            <button id="Add" class="btn ">Добавить</button>
+                                   
+                               
+                        </fieldset>
+                        }
+                            
+                       
+
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 " style="padding: 10px; min-height: 200px;">
+
+
+                        <fieldset>
+                            <legend>Добавить картинку</legend>
+                            <div>
+                                <label for="Name">Name</label><br />
+                                <input id="Name" name="Name" type="text" />
+                            </div>
+                            <div>
+                                <label for="Code">Code</label><br />
+                                <input id="Code" name="Code" type="text" />
+                            </div>
+                           
+                            <div>
+                                <label for="image">image</label>
+                                <input id="image" type="file" name="image" />
+                            </div>
+                           
+                           
+                            <br />
+                            <button id="Addimage" class="btn ">Добавить</button>
+
+
+                        </fieldset>
+                        }
+
+
+
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 newsrow">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 imagerow">
+
+                            </div>
+                            <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 textrow">
+                                <h1>Заголовок</h1>
+                                <br>
+                                <p>Текст</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 newsrow">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 imagerow">
+
+                            </div>
+                            <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 textrow">
+                                <h1>Заголовок</h1>
+                                <br>
+                                <p>Текст</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="Recents" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 newsrow" style="min-height: 0;">
+
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 othernews text-center">
+                        <button id="AppButton" class="btn othernewsbutton" >Другие новости</button>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+
+            </div>
+
+
+        </div>
+    </div>
+</div>
+

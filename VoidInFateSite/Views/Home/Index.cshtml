@@ -1,0 +1,114 @@
+﻿@using System.Activities.Statements
+@model IEnumerable<Domain.Entities.Recent>
+@{
+    
+    ViewBag.Title = "Главная";
+}
+
+
+
+   <div id="main" style=" background: url(../../fonts/logo/fon1.jpg) no-repeat black; background-size: contain ; ">
+    <div class="container-fluid " >
+        <div class="row ">
+            <div class="col-xs-12 col-sm-2 col-md-2 col-lg-3 ">
+            </div>
+            <div class="col-xs-12 col-sm-8 col-md-8 col-lg-6 gameSize">
+                
+                <div class="row " style="height: 600px ">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center " style="margin-top: 50px; height: 10px; ">
+
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center"style="height: 350px;  ">
+                        <img  src="../../fonts/logo/LOGO.png" alt="" style="height: 100%;width: 70%">
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center "style="margin-top: 50px;margin-bottom:40px;   ">
+                        <a href="/Download" class="btn startbutton ">НАЧАТЬ ИГРАТЬ!</a>
+                    </div>
+                   
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-2 col-md-2 col-lg-3 ">
+            </div>
+            
+        </div>
+    </div>
+    <div class="container-fluid" >
+        <div class="row">
+            <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 ">
+            </div>
+            <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 mainsize" style="background-color: #101210; border: 6px double black; border-radius: 16px; margin-bottom: 50px; " id="mainblock">
+               
+                <div class="row" style="background-color: #090809;">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="height: 20px;" id="video">
+                      
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 youtubesize text-center" style="" id="video">
+                        <div class="container-fluid text-center videosize">
+                            <iframe src="http://www.youtube.com/embed/ZlkTg5kPk30?rel=0" allowfullscreen="" frameborder="0"></iframe>
+                        </div>
+                    </div>
+                    @try
+                    {
+                        foreach (var item in Model)
+                        {
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 newsrow">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 imagerow">
+                                        @Html.Raw("<img style='width: 100%; top: 0; left: 0; right: 0; height: 100%; position: absolute;' src=\"data:image/jpeg;base64,"
+                                                  + Convert.ToBase64String(item.LinkSmallImg) + "\" />")
+
+                                    </div>
+                                    <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 textrow">
+                                        <a href="/News/@item.Id"> <h1>@item.Caption</h1></a> 
+                                        <br>
+                                        <p>@item.Text</p>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    }
+                    catch
+                    {
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 newsrow">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 imagerow">
+
+                                </div>
+                                <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 textrow">
+                                    <h1>Новостей</h1>
+                                    <br>
+                                    <p>Нет</p>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    <div id="results"></div>
+                    @try
+                    {
+                        
+                        using (Ajax.BeginForm("AddNews", new AjaxOptions {UpdateTargetId = "results"}))
+                        {
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 othernews text-center">
+                                <input type="submit" value="Другие новости" class="btn othernewsbutton"/>
+                                
+                            </div>
+                        }
+                    }
+                    catch
+                    {
+
+                    }
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+
+
+   

@@ -1,0 +1,26 @@
+﻿ @model Domain.Entities.CodeImage
+     @if (Model != null)
+     {
+         <div class="container-fluid ">
+             @Html.Raw("<img style='width: 100%; top: 0; left: 0; right: 0; height: 100%; position: absolute;border: 3px solid orangered;' src=\"data:image/jpeg;base64,"
+                       + Convert.ToBase64String(Model.Image) + "\" />")
+         </div>
+         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center" style="height: 50px;">
+             <div class="container-fluid ">
+              <p>@Model.Name</p>
+             </div>
+         </div>
+     }
+     else
+     { 
+         <div class="container-fluid ">
+             <img src="../../fonts/errorstop.png" style="width: 100%; top: 0; left: 0; right: 0; height:400px; position: absolute; border: 3px solid orangered;  "/>
+         </div>
+         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center" style="height: 50px;">
+             <div class="container-fluid ">
+                 <p>Код неверный</p>
+             </div>
+         </div>
+         
+     }
+
